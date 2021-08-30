@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard teletometro</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="navigation">
+        <ul>
+          <li>
+            <a>
+              <span class="icon"><i class="fa fa-thermometer-half" aria-hidden="true"></i></span>
+              <span class="title"><h2>TELETOMETRO</h2></span>
+            </a>
+          </li>
+          <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaPrincipal')">
+              <span class="icon"
+                ><i class="fa fa-home" aria-hidden="true"></i
+              ></span>
+              <span class="title">PRINCIPAL</span>
+            </a>
+          </li>
+          <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaMedios')">
+              <span class="icon"
+                ><i class="fa fa-credit-card-alt" aria-hidden="true"></i
+              ></span>
+              <span class="title">MEDIOS</span>
+            </a>
+          </li>
+          <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaSucursales')">
+              <span class="icon"
+                ><i class="fa fa-building" aria-hidden="true"></i
+              ></span>
+              <span class="title">SUCURSALES</span>
+            </a>
+          </li>
+          <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaEstados')">
+              <span class="icon"
+                ><i class="fa fa-globe" aria-hidden="true"></i
+              ></span>
+              <span class="title">ESTADOS</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaSucursales')">
+              <span class="icon"
+                ><i class="fa fa-database" aria-hidden="true"></i
+              ></span>
+              <span class="title">MOVIMIENTOS</span>
+            </a>
+          </li> -->
+          <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaPatrocinadores')">
+            <span class="icon"
+              ><i class="fa fa-users" aria-hidden="true"></i
+            ></span>
+            <span class="title">PATROCINADORES</span>
+        </a>
+          </li>
+          <li>
+            <a class="tablinks" onclick="openTab(event, 'vistaConfiguracion')">
+              <span class="icon"
+                ><i class="fa fa-cog" aria-hidden="true"></i
+              ></span>
+              <span class="title">CONFIGURACION</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="main_content" id="vistaPrincipal">
+        <div class ="header_content">
+            <div class="toggle" onclick="toggleMenu(0)"></div>
+            
+            <div class="message">
+                <h1>2019, Mensaje cargado</h1>
+               
+            </div>
+            <div class="hour">
+              <h4 id="lastHour"></h4>
+            </div>
+        </div>
+        <h1>IMPORTES</h1>
+        <div class="cardBox">
+          
+          <div class="card">
+            <div>
+              <div class="cardName">SUCURSALES</div>
+              <div class="numbers" id="impoSucursal">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CAT</div>
+              <div class="numbers" id="impoCat">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">BANCANET</div>
+              <div class="numbers" id="impoBnet">$0.00</div>
+            </div> 
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">BOTEO</div>
+              <div class="numbers" id="impoBoteo">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">ALCANCIAS</div>
+              <div class="numbers" id="impoAlcancias">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CODI CITI</div>
+              <div class="numbers" id="impoCodiCiti">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CODI OTROS BANCOS</div>
+              <div class="numbers" id="impoCodiOtBan">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CODI BOTEO</div>
+              <div class="numbers" id="impoCodiCiti">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">PATROCINADORES</div>
+              <div class="numbers">$0.00</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">TOTAL</div>
+              <div class="numbers" id="totalImportes">$0.00</div>
+            </div>
+          </div>
+        </div>
+        <h1>DONATIVOS</h1>
+        <div class="cardBox">
+          
+          <div class="card">
+            <div>
+              <div class="cardName">SUCURSALES</div>
+              <div class="numbers" id="donatSucursal">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CAT</div>
+              <div class="numbers" id="donatCat">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">BANCANET</div>
+              <div class="numbers" id="donatBnet">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">BOTEO</div>
+              <div class="numbers" id="donatBoteo">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">ALCANCIAS</div>
+              <div class="numbers" id="donatAlcancias">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CODI CITI</div>
+              <div class="numbers" id="donatCodiCiti">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CODI OTROS BANCOS</div>
+              <div class="numbers" id="donatCodiOtBan">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">CODI BOTEO</div>
+              <div class="numbers" id="donatCodiBoteo">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">PATROCINADORES</div>
+              <div class="numbers">0</div>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="cardName">TOTAL</div>
+              <div class="numbers" id="totalDonativos">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="details">
+          <div class="viewTypes">
+            <div class="typesHeader">
+              <h2>Tipos</h2>
+            </div>
+              <table>
+                <thead>
+                  <tr>
+                    <td></td>
+                    <td>Donativos</td>
+                    <td>Total</td>
+                    <td>Donativos</td>
+                    <td>Total</td>
+                    <td>Donativos</td>
+                    <td>Total</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Efectivo</td>
+                    <td id="efectDonatSucu"></td>
+                    <td id="efectTotSucu"></td>
+                    <td id="efectDonatSucu"></td>
+                    <td>-</td>
+                    <td id="efectDonatBnet"></td>
+                    <td id="efectTotBnet"></td>
+                  </tr>
+                  <tr>
+                    <td>Cheques Citibanamex</td>
+                    <td id="cheqBanDonatSucu"></td>
+                    <td id="cheqBanTotSucu"></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Cheques Otros Bancos</td>
+                    <td id="cheqOtBanDonatSucu"></td>
+                    <td id="cheqOtBanTotSucu"></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Tarjetas Citibanamex</td>
+                    <td id="tarjCitiDonatSucu"></td>
+                    <td id="tarjCitiTotSucu"></td>
+                    <td id="tarjCitiDonatCat"></td>
+                    <td id="tarjCitiTotSCat"></td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Tarjetas Otros Bancos</td>
+                    <td id="tarjOtBanDonatSucu"></td>
+                    <td id="tarjOtBanTotSucu"></td>
+                    <td id="tarjOtBanDonatCat"></td>
+                    <td id="tarjOtBanTotCat"></td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>American Express</td>
+                    <td id="AmerExpDonatSucu"></td>
+                    <td id="AmerExpTotSucu"></td>
+                    <td id="AmerExpDonaTCat"></td>
+                    <td id="AmerExpTotCat"></td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+  
+                </tbody>
+              </table>
+           
+                                                                                                                                          
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main_content" id="vistaMedios">
+        <div class ="header_content">
+          <div class="toggle" onclick="toggleMenu(1)"></div>
+          
+          <div class="message">
+              <h1>2019, Mensaje cargado</h1>
+             
+          </div>
+          <div class="hour">
+            <h4>8:00</h4>
+          </div>
+      </div>
+      <div class="details">
+        <div class="viewTypes">
+          <div class="typesHeader">
+            <h2>Medios</h2>
+          </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>Movtos sucursal</td>
+                  <td>Importe</td>
+                  <td>Movtos CAT</td>
+                  <td>Importe</td>
+                  <td>Movtos Bnet</td>
+                  <td>Importe</td>
+                  <td>Movtos Boteo</td>
+                  <td>Importe</td>
+                  <td>Movtos Alcancias</td>
+                  <td>Importe</td>
+                  <td>Movtos CODI OB</td>
+                  <td>Importe</td>
+                  <td>Movtos CODI CB</td>
+                  <td>Importe</td>
+                  <td>Hora</td>
+                </tr>
+              </thead>
+              <tbody id="tableData">
+                
+
+              </tbody>
+            </table>
+         
+                                                                                                                                        
+          </div>
+        </div>
+      </section>
+      <section class="main_content" id="vistaSucursales">
+        <div class ="header_content">
+          <div class="toggle" onclick="toggleMenu(2)"></div>
+          
+          <div class="message">
+              <h1>2019, Mensaje cargado</h1>
+             
+          </div>
+          <div class="hour">
+            <h4>8:00</h4>
+          </div>
+      </div>
+      <div class="details">
+        <div class="viewTypes">
+          <div class="typesHeader">
+            <h2>Sucursales</h2>
+          </div>
+            <table>
+              <thead>
+                <tr>
+                  <td># sucursal</td>
+                  <td>Movtos sucursal</td>
+                  <td>Importe</td>
+                  <td>Movtos CAT</td>
+                  <td>Importe</td>
+                  <td>Movtos Bnet</td>
+                  <td>Importe</td>
+                  <td>Movtos Boteo</td>
+                  <td>Importe</td>
+                  <td>Movtos Alcancias</td>
+                  <td>Importe</td>
+                  <td>Movtos Amex</td>
+                  <td>Importe</td>
+                  <td>Estado</td>
+                </tr>
+              </thead>
+              <tbody id="tableDataSuc">
+                
+
+              </tbody>
+            </table>
+         
+                                                                                                                                        
+          </div>
+        </div>
+      </section>
+      <section class="main_content" id="vistaEstados">
+        <div class ="header_content">
+          <div class="toggle" onclick="toggleMenu(3)"></div>
+          
+          <div class="message">
+              <h1>2019, Mensaje cargado</h1>
+             
+          </div>
+          <div class="hour">
+            <h4>8:00</h4>
+          </div>
+      </div>
+      <div class="details">
+        <div class="viewTypes">
+          <div class="typesHeader">
+            <h2>Estados</h2>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th class="item1">Nom. Estado</th>
+                <th class="item2">Movtos. Suc</th>
+                <th class="item3">Importes Suc.</th>
+                <th class="item4">Movtos CAT</th>
+                <th class="item5">Importes CAT</th>
+                <th class="item6">Movtos Bnet</th>
+                <th class="item7">Importes Bnet</th>
+                <th class="item8">Movtos Boteo</th>
+                <th class="item9">Importes Boteo</th>
+                <th class="item10">Movtos Alcancías</th>
+                <th class="item11">Importes Alcancías</th>
+                <th class="item12">Movtos Amex</th>
+                <th class="item13">Importes Amex</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DISTRITO FEDERAL</td>
+                <td id="dFcol1"></td>
+                <td id="dFcol2"></td>
+                <td id="dFcol3"></td>
+                <td id="dFcol4"></td>
+                <td id="dFcol5"></td>
+                <td id="dFcol6"></td>
+                <td id="dFcol7"></td>
+                <td id="dFcol8"></td>
+                <td id="dFcol9"></td>
+                <td id="dFcol10"></td>
+                <td id="dFcol11"></td>
+                <td id="dFcol12"></td>
+                <td id="dFcol13"></td>
+              </tr>
+              <tr>
+                <td>AGUASCALIENTES</td>
+                <td id="Agcol1"></td>
+                <td id="Agcol2"></td>
+                <td id="Agcol3"></td>
+                <td id="Agcol4"></td>
+                <td id="Agcol5"></td>
+                <td id="Agcol6"></td>
+                <td id="Agcol7"></td>
+                <td id="Agcol8"></td>
+                <td id="Agcol9"></td>
+                <td id="Agcol10"></td>
+                <td id="Agcol11"></td>
+                <td id="Agcol12"></td>
+                <td id="Agcol13"></td>
+              </tr>
+              <tr>
+                <td>BAJA CALIFORNIA NORTE</td>
+                <td id="bCNcol1"></td>
+                <td id="bCNcol2"></td>
+                <td id="bCNcol3"></td>
+                <td id="bCNcol4"></td>
+                <td id="bCNcol5"></td>
+                <td id="bCNcol6"></td>
+                <td id="bCNcol7"></td>
+                <td id="bCNcol8"></td>
+                <td id="bCNcol9"></td>
+                <td id="bCNcol10"></td>
+                <td id="bCNcol11"></td>
+                <td id="bCNcol12"></td>
+                <td id="bCNcol13"></td>
+              </tr>
+              <tr>
+                <td>BAJA CALIFORNIA SUR</td>
+                <td id="bCScol1"></td>
+                <td id="bCScol2"></td>
+                <td id="bCScol3"></td>
+                <td id="bCScol4"></td>
+                <td id="bCScol5"></td>
+                <td id="bCScol6"></td>
+                <td id="bCScol7"></td>
+                <td id="bCScol8"></td>
+                <td id="bCScol9"></td>
+                <td id="bCScol10"></td>
+                <td id="bCScol11"></td>
+                <td id="bCScol12"></td>
+                <td id="bCScol13"></td>
+              </tr>
+              <tr>
+                <td>CAMPECHE</td>
+                <td id="Cacol1"></td>
+                <td id="Cacol2"></td>
+                <td id="Cacol3"></td>
+                <td id="Cacol4"></td>
+                <td id="Cacol5"></td>
+                <td id="Cacol6"></td>
+                <td id="Cacol7"></td>
+                <td id="Cacol8"></td>
+                <td id="Cacol9"></td>
+                <td id="Cacol10"></td>
+                <td id="Cacol11"></td>
+                <td id="Cacol12"></td>
+                <td id="Cacol13"></td>
+              </tr>
+              <tr>
+                <td>COAHUILA</td>
+                <td id="Cocol1"></td>
+                <td id="Cocol2"></td>
+                <td id="Cocol3"></td>
+                <td id="Cocol4"></td>
+                <td id="Cocol5"></td>
+                <td id="Cocol6"></td>
+                <td id="Cocol7"></td>
+                <td id="Cocol8"></td>
+                <td id="Cocol9"></td>
+                <td id="Cocol10"></td>
+                <td id="Cocol11"></td>
+                <td id="Cocol12"></td>
+                <td id="Cocol13"></td>
+              </tr>
+              <tr>
+                <td>COLIMA</td>
+                <td id="Colcol1"></td>
+                <td id="Colcol2"></td>
+                <td id="Colcol3"></td>
+                <td id="Colcol4"></td>
+                <td id="Colcol5"></td>
+                <td id="Colcol6"></td>
+                <td id="Colcol7"></td>
+                <td id="Colcol8"></td>
+                <td id="Colcol9"></td>
+                <td id="Colcol10"></td>
+                <td id="Colcol11"></td>
+                <td id="Colcol12"></td>
+                <td id="Colcol13"></td>
+              </tr>
+              <tr>
+                <td>CHIAPAS</td>
+                <td id="Chcol1"></td>
+                <td id="Chcol2"></td>
+                <td id="Chcol3"></td>
+                <td id="Chcol4"></td>
+                <td id="Chcol5"></td>
+                <td id="Chcol6"></td>
+                <td id="Chcol7"></td>
+                <td id="Chcol8"></td>
+                <td id="Chcol9"></td>
+                <td id="Chcol10"></td>
+                <td id="Chcol11"></td>
+                <td id="Chcol12"></td>
+                <td id="Chcol13"></td>
+              </tr>
+              <tr>
+                <td>CHIHUAHUA</td>
+                <td id="Chicol1"></td>
+                <td id="Chicol2"></td>
+                <td id="Chicol3"></td>
+                <td id="Chicol4"></td>
+                <td id="Chicol5"></td>
+                <td id="Chicol6"></td>
+                <td id="Chicol7"></td>
+                <td id="Chicol8"></td>
+                <td id="Chicol9"></td>
+                <td id="Chicol10"></td>
+                <td id="Chicol11"></td>
+                <td id="Chicol12"></td>
+                <td id="Chicol13"></td>
+              </tr>
+              <tr>
+                <td>DURANGO</td>
+                <td id="Ducol1"></td>
+                <td id="Ducol2"></td>
+                <td id="Ducol3"></td>
+                <td id="Ducol4"></td>
+                <td id="Ducol5"></td>
+                <td id="Ducol6"></td>
+                <td id="Ducol7"></td>
+                <td id="Ducol8"></td>
+                <td id="Ducol9"></td>
+                <td id="Ducol10"></td>
+                <td id="Ducol11"></td>
+                <td id="Ducol12"></td>
+                <td id="Ducol13"></td>
+              </tr>
+              <tr>
+                <td>GUANAJUATO</td>
+                <td id="Gucol1"></td>
+                <td id="Gucol2"></td>
+                <td id="Gucol3"></td>
+                <td id="Gucol4"></td>
+                <td id="Gucol5"></td>
+                <td id="Gucol6"></td>
+                <td id="Gucol7"></td>
+                <td id="Gucol8"></td>
+                <td id="Gucol9"></td>
+                <td id="Gucol10"></td>
+                <td id="Gucol11"></td>
+                <td id="Gucol12"></td>
+                <td id="Gucol13"></td>
+              </tr>
+              <tr>
+                <td>GUERRERO</td>
+                <td id="Guecol1"></td>
+                <td id="Guecol2"></td>
+                <td id="Guecol3"></td>
+                <td id="Guecol4"></td>
+                <td id="Guecol5"></td>
+                <td id="Guecol6"></td>
+                <td id="Guecol7"></td>
+                <td id="Guecol8"></td>
+                <td id="Guecol9"></td>
+                <td id="Guecol10"></td>
+                <td id="Guecol11"></td>
+                <td id="Guecol12"></td>
+                <td id="Guecol13"></td>
+              </tr>
+              <tr>
+                <td>HIDALGO</td>
+                <td id="Hicol1"></td>
+                <td id="Hicol2"></td>
+                <td id="Hicol3"></td>
+                <td id="Hicol4"></td>
+                <td id="Hicol5"></td>
+                <td id="Hicol6"></td>
+                <td id="Hicol7"></td>
+                <td id="Hicol8"></td>
+                <td id="Hicol9"></td>
+                <td id="Hicol10"></td>
+                <td id="Hicol11"></td>
+                <td id="Hicol12"></td>
+                <td id="Hicol13"></td>
+              </tr>
+              <tr>
+                <td>JALISCO</td>
+                <td id="Jacol1"></td>
+                <td id="Jacol2"></td>
+                <td id="Jacol3"></td>
+                <td id="Jacol4"></td>
+                <td id="Jacol5"></td>
+                <td id="Jacol6"></td>
+                <td id="Jacol7"></td>
+                <td id="Jacol8"></td>
+                <td id="Jacol9"></td>
+                <td id="Jacol10"></td>
+                <td id="Jacol11"></td>
+                <td id="Jacol12"></td>
+                <td id="Jacol13"></td>
+              </tr>
+              <tr>
+                <td>EDO DE MEXICO</td>
+                <td id="eMcol1"></td>
+                <td id="eMcol2"></td>
+                <td id="eMcol3"></td>
+                <td id="eMcol4"></td>
+                <td id="eMcol5"></td>
+                <td id="eMcol6"></td>
+                <td id="eMcol7"></td>
+                <td id="eMcol8"></td>
+                <td id="eMcol9"></td>
+                <td id="eMcol10"></td>
+                <td id="eMcol11"></td>
+                <td id="eMcol12"></td>
+                <td id="eMcol13"></td>
+              </tr>
+              <tr>
+                <td>MICHOACAN</td>
+                <td id="Micol1"></td>
+                <td id="Micol2"></td>
+                <td id="Micol3"></td>
+                <td id="Micol4"></td>
+                <td id="Micol5"></td>
+                <td id="Micol6"></td>
+                <td id="Micol7"></td>
+                <td id="Micol8"></td>
+                <td id="Micol9"></td>
+                <td id="Micol10"></td>
+                <td id="Micol11"></td>
+                <td id="Micol12"></td>
+                <td id="Micol13"></td>
+              </tr>
+              <tr>
+                <td>MORELOS</td>
+                <td id="Mocol1"></td>
+                <td id="Mocol2"></td>
+                <td id="Mocol3"></td>
+                <td id="Mocol4"></td>
+                <td id="Mocol5"></td>
+                <td id="Mocol6"></td>
+                <td id="Mocol7"></td>
+                <td id="Mocol8"></td>
+                <td id="Mocol9"></td>
+                <td id="Mocol10"></td>
+                <td id="Mocol11"></td>
+                <td id="Mocol12"></td>
+                <td id="Mocol13"></td>
+              </tr>
+              <tr>
+                <td>NAYARIT</td>
+                <td id="Nacol1"></td>
+                <td id="Nacol2"></td>
+                <td id="Nacol3"></td>
+                <td id="Nacol4"></td>
+                <td id="Nacol5"></td>
+                <td id="Nacol6"></td>
+                <td id="Nacol7"></td>
+                <td id="Nacol8"></td>
+                <td id="Nacol9"></td>
+                <td id="Nacol10"></td>
+                <td id="Nacol11"></td>
+                <td id="Nacol12"></td>
+                <td id="Nacol13"></td>
+              </tr>
+              <tr>
+                <td>NUEVO LEON</td>
+                <td id="nLcol1"></td>
+                <td id="nLcol2"></td>
+                <td id="nLcol3"></td>
+                <td id="nLcol4"></td>
+                <td id="nLcol5"></td>
+                <td id="nLcol6"></td>
+                <td id="nLcol7"></td>
+                <td id="nLcol8"></td>
+                <td id="nLcol9"></td>
+                <td id="nLcol10"></td>
+                <td id="nLcol11"></td>
+                <td id="nLcol12"></td>
+                <td id="nLcol13"></td>
+              </tr>
+              <tr>
+                <td>OAXACA</td>
+                <td id="Oacol1"></td>
+                <td id="Oacol2"></td>
+                <td id="Oacol3"></td>
+                <td id="Oacol4"></td>
+                <td id="Oacol5"></td>
+                <td id="Oacol6"></td>
+                <td id="Oacol7"></td>
+                <td id="Oacol8"></td>
+                <td id="Oacol9"></td>
+                <td id="Oacol10"></td>
+                <td id="Oacol11"></td>
+                <td id="Oacol12"></td>
+                <td id="Oacol13"></td>
+              </tr>
+              <tr>
+                <td>PUEBLA</td>
+                <td id="Pucol1"></td>
+                <td id="Pucol2"></td>
+                <td id="Pucol3"></td>
+                <td id="Pucol4"></td>
+                <td id="Pucol5"></td>
+                <td id="Pucol6"></td>
+                <td id="Pucol7"></td>
+                <td id="Pucol8"></td>
+                <td id="Pucol9"></td>
+                <td id="Pucol10"></td>
+                <td id="Pucol11"></td>
+                <td id="Pucol12"></td>
+                <td id="Pucol13"></td>
+              </tr>
+              <tr>
+                <td>QUERETARO</td>
+                <td id="Qucol1"></td>
+                <td id="Qucol2"></td>
+                <td id="Qucol3"></td>
+                <td id="Qucol4"></td>
+                <td id="Qucol5"></td>
+                <td id="Qucol6"></td>
+                <td id="Qucol7"></td>
+                <td id="Qucol8"></td>
+                <td id="Qucol9"></td>
+                <td id="Qucol10"></td>
+                <td id="Qucol11"></td>
+                <td id="Qucol12"></td>
+                <td id="Qucol13"></td>
+              </tr>
+              <tr>
+                <td>QUINTANA ROO</td>
+                <td id="qRcol1"></td>
+                <td id="qRcol2"></td>
+                <td id="qRcol3"></td>
+                <td id="qRcol4"></td>
+                <td id="qRcol5"></td>
+                <td id="qRcol6"></td>
+                <td id="qRcol7"></td>
+                <td id="qRcol8"></td>
+                <td id="qRcol9"></td>
+                <td id="qRcol10"></td>
+                <td id="qRcol11"></td>
+                <td id="qRcol12"></td>
+                <td id="qRcol13"></td>
+              </tr>
+              <tr>
+                <td>SAN LUIS POTOSI</td>
+                <td id="sLPcol1"></td>
+                <td id="sLPcol2"></td>
+                <td id="sLPcol3"></td>
+                <td id="sLPcol4"></td>
+                <td id="sLPcol5"></td>
+                <td id="sLPcol6"></td>
+                <td id="sLPcol7"></td>
+                <td id="sLPcol8"></td>
+                <td id="sLPcol9"></td>
+                <td id="sLPcol10"></td>
+                <td id="sLPcol11"></td>
+                <td id="sLPcol12"></td>
+                <td id="sLPcol13"></td>
+              </tr>
+              <tr>
+                <td>SINALOA</td>
+                <td id="Sicol1"></td>
+                <td id="Sicol2"></td>
+                <td id="Sicol3"></td>
+                <td id="Sicol4"></td>
+                <td id="Sicol5"></td>
+                <td id="Sicol6"></td>
+                <td id="Sicol7"></td>
+                <td id="Sicol8"></td>
+                <td id="Sicol9"></td>
+                <td id="Sicol10"></td>
+                <td id="Sicol11"></td>
+                <td id="Sicol12"></td>
+                <td id="Sicol13"></td>
+              </tr>
+              <tr>
+                <td>SONORA</td>
+                <td id="Socol1"></td>
+                <td id="Socol2"></td>
+                <td id="Socol3"></td>
+                <td id="Socol4"></td>
+                <td id="Socol5"></td>
+                <td id="Socol6"></td>
+                <td id="Socol7"></td>
+                <td id="Socol8"></td>
+                <td id="Socol9"></td>
+                <td id="Socol10"></td>
+                <td id="Socol11"></td>
+                <td id="Socol12"></td>
+                <td id="Socol13"></td>
+              </tr>
+              <tr>
+                <td>TABASCO</td>
+                <td id="Tacol1"></td>
+                <td id="Tacol2"></td>
+                <td id="Tacol3"></td>
+                <td id="Tacol4"></td>
+                <td id="Tacol5"></td>
+                <td id="Tacol6"></td>
+                <td id="Tacol7"></td>
+                <td id="Tacol8"></td>
+                <td id="Tacol9"></td>
+                <td id="Tacol10"></td>
+                <td id="Tacol11"></td>
+                <td id="Tacol12"></td>
+                <td id="Tacol13"></td>
+              </tr>
+              <tr>
+                <td>TAMAULIPAS</td>
+                <td id="Tamcol1"></td>
+                <td id="Tamcol2"></td>
+                <td id="Tamcol3"></td>
+                <td id="Tamcol4"></td>
+                <td id="Tamcol5"></td>
+                <td id="Tamcol6"></td>
+                <td id="Tamcol7"></td>
+                <td id="Tamcol8"></td>
+                <td id="Tamcol9"></td>
+                <td id="Tamcol10"></td>
+                <td id="Tamcol11"></td>
+                <td id="Tamcol12"></td>
+                <td id="Tamcol13"></td>
+              </tr>
+              <tr>
+                <td>TLAXCALA</td>
+                <td id="Tlcol1"></td>
+                <td id="Tlcol2"></td>
+                <td id="Tlcol3"></td>
+                <td id="Tlcol4"></td>
+                <td id="Tlcol5"></td>
+                <td id="Tlcol6"></td>
+                <td id="Tlcol7"></td>
+                <td id="Tlcol8"></td>
+                <td id="Tlcol9"></td>
+                <td id="Tlcol10"></td>
+                <td id="Tlcol11"></td>
+                <td id="Tlcol12"></td>
+                <td id="Tlcol13"></td>
+              </tr>
+              <tr>
+                <td>VERACRUZ</td>
+                <td id="Vecol1"></td>
+                <td id="Vecol2"></td>
+                <td id="Vecol3"></td>
+                <td id="Vecol4"></td>
+                <td id="Vecol5"></td>
+                <td id="Vecol6"></td>
+                <td id="Vecol7"></td>
+                <td id="Vecol8"></td>
+                <td id="Vecol9"></td>
+                <td id="Vecol10"></td>
+                <td id="Vecol11"></td>
+                <td id="Vecol12"></td>
+                <td id="Vecol13"></td>
+              </tr>
+              <tr>
+                <td>YUCATAN</td>
+                <td id="Yucol1"></td>
+                <td id="Yucol2"></td>
+                <td id="Yucol3"></td>
+                <td id="Yucol4"></td>
+                <td id="Yucol5"></td>
+                <td id="Yucol6"></td>
+                <td id="Yucol7"></td>
+                <td id="Yucol8"></td>
+                <td id="Yucol9"></td>
+                <td id="Yucol10"></td>
+                <td id="Yucol11"></td>
+                <td id="Yucol12"></td>
+                <td id="Yucol13"></td>
+              </tr>
+              <tr>
+                <td>ZACATECAS</td>
+                <td id="Zacol1"></td>
+                <td id="Zacol2"></td>
+                <td id="Zacol3"></td>
+                <td id="Zacol4"></td>
+                <td id="Zacol5"></td>
+                <td id="Zacol6"></td>
+                <td id="Zacol7"></td>
+                <td id="Zacol8"></td>
+                <td id="Zacol9"></td>
+                <td id="Zacol10"></td>
+                <td id="Zacol11"></td>
+                <td id="Zacol12"></td>
+                <td id="Zacol13"></td>
+              </tr>
+              <!-- <tr>
+                <td>Total Estado</td>
+              </tr>
+              <tr>
+                <td>Total Nacional</td>
+              </tr> -->
+            </tbody>
+          </table>
+         
+                                                                                                                                        
+          </div>
+        </div>
+      </section>
+      <section class="main_content" id="vistaPatrocinadores">
+        <div class ="header_content">
+          <div class="toggle" onclick="toggleMenu(4)"></div>
+          
+          <div class="message">
+              <h1>2019, Mensaje cargado</h1>
+             
+          </div>
+          <div class="hour">
+            <h4>8:00</h4>
+          </div>
+      </div>
+        <h2>vista patrocinadores</h2>
+        <form action="" name="test0">
+          <p>NOMBRE:<br><input type="text" name="name" id="name"></p>
+          <p>NUMERO:<br><input type="text" name="number" id="number"></p>
+          <p>IMPORTE:<br><input type="text" name="importe" id="importe"></p>
+          <p><input type="button" onclick="agregarObjeto()" name="save" id="save" value="GUARDAR"></p>
+      </form>
+      <div id="zonadatos">
+        Datos de patrocinadores
+      </div>
+      </section>
+      <section class="main_content" id="vistaConfiguracion">
+        <div class ="header_content">
+          <div class="toggle" onclick="toggleMenu(5)"></div>
+          
+          <div class="message">
+              <h1>2019, Mensaje cargado</h1>
+             
+          </div>
+          <div class="hour">
+            <h4>8:00</h4>
+          </div>
+      </div>
+        <h2>vista configuracion. Carga de archivo</h2>
+        <input type="file" id="file-input" />
+        <h3>Contenido del archivo:</h3>
+        <textarea id="contenido-archivo"></textarea> <br/>
+  
+        <h3>Guardar el archivo:</h3>
+        <br/>
+        <button onclick="savefile()">Guardar</button>
+
+      </section>
+    </main>
+    <script  type="text/javascript">
+      function toggleMenu(view){
+       
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        // let main_content = document.querySelector('.main_content');
+        let main_contentArray = document.getElementsByClassName("main_content");
+        toggle.classList.toggle('active')
+        navigation.classList.toggle('active')
+        main_contentArray[view].classList.toggle('active')
+        // console.log("main_content toggle", main_content);
+        console.log("main_contentArrray toggle", main_contentArray[view]);
+      }
+
+      
+      function openTab(evt, description) {
+        var i, main_content, tablinks;
+        main_content = document.getElementsByClassName("main_content");
+        for (i = 0; i < main_content.length; i++) {
+          // console.log("main content i", main_content[i]);
+
+          main_content[i].style.display = "none";
+          
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          // console.log("tablinks i", tablinks[i]);
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        // console.log("evento", evt);
+        document.getElementById(description).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
